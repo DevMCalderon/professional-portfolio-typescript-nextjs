@@ -11,7 +11,7 @@ import { getTranslations } from "next-intl/server";
 export default async function Navbar() {
   const t = await getTranslations("navbar");
   return (
-    <header className="w-full">
+    <header className="w-full" id="top">
       <nav
         className="fixed top-0 z-10 w-full py-2 transition-all duration-800 ease-in-out
           before:absolute before:inset-0 before:-z-10
@@ -19,7 +19,7 @@ export default async function Navbar() {
           before:transition-opacity before:duration-500
         "
       >
-        <div className="max-w-11/12 md:max-w-6xl flex items-center justify-between mx-auto">
+        <div className="max-w-11/12 lg:max-w-6xl flex items-center justify-between mx-auto">
           {/* left side: logo & navigation links */}
           <div className="flex justify-center items-center gap-8">
             <Link href={"/"}>
