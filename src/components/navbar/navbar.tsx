@@ -3,11 +3,11 @@ import MobileNavbar from "./mobile-navbar";
 import Link from "next/link";
 import GoTopButton from "../go-top-button";
 import { Button } from "@base-ui/react";
-import Image from "next/image";
 import ThemeSelector from "./theme-selector";
 import { getTranslations } from "next-intl/server";
 import { Mail } from "lucide-react";
 import { navigationItems } from "./navigation-items";
+import Logo from "../logo";
 
 export default async function Navbar() {
   const t = await getTranslations("navbar");
@@ -20,15 +20,7 @@ export default async function Navbar() {
         <div className="max-w-11/12 lg:max-w-6xl flex items-center justify-between mx-auto">
           {/* left side: logo & navigation links */}
           <div className="flex justify-center items-center gap-8">
-            <Link href={"/"}>
-              <Image
-                loading="eager"
-                src={"/images/logo.png"}
-                alt="Logo de Calderón"
-                width={160}
-                height={160}
-              />
-            </Link>
+            <Logo width={160} height={160} />
 
             {/* central side: navigation links */}
             <ul className="flex items-center gap-8">

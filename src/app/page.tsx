@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-20">
         <div className="backdrop-blur-[0.2rem]">
           <Banner />
           <Skills />

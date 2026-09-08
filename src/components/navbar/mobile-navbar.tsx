@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Mail, Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { navigationItems } from "./navigation-items";
@@ -14,47 +14,55 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import LanguageSelector from "./language-selector";
+import ThemeSelector from "./theme-selector";
+import Logo from "../logo";
 
 export default function MobileNavbar() {
   const t = useTranslations("navbar");
 
   return (
-    <div className="fixed top-0 right-0 z-50 lg:hidden">
-      <Sheet>
-        <SheetTrigger
-          render={
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label={t("menu")}
-              className="text-foreground hover:text-primary"
-            >
-              <Menu />
-            </Button>
-          }
-        />
+    <nav className="fixed top-0 right-0 z-50 w-full lg:hidden">
+      <div className="max-w-11/12 mx-auto flex items-center justify-between py-2">
+        <Logo width={120} height={120} />
 
-        <SheetContent
-          side="right"
-          className="w-72 border-l border-border bg-background"
-        >
-          <SheetHeader>
-            <SheetTitle>{t("menu")}</SheetTitle>
-          </SheetHeader>
+        <Sheet>
+          {/* Menu trigger */}
+          <SheetTrigger
+            render={
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label={t("menu")}
+                className="text-foreground hover:text-primary"
+              >
+                <Menu size={24} />
+              </Button>
+            }
+          />
 
-          <nav className="mt-6">
-            <ul className="flex flex-col gap-2">
-              {navigationItems.map((item) => {
-                const Icon = item.icon;
+          <SheetContent
+            side="right"
+            className="w-72 px-3 border-l border-border bg-background"
+          >
+            <SheetHeader>
+              <SheetTitle>{t("menu")}</SheetTitle>
+            </SheetHeader>
 
-                return (
-                  <li key={item.href}>
-                    <SheetClose
-                      nativeButton={false}
-                      render={
-                        <Link
-                          href={item.href}
-                          className="
+            {/* Navigation */}
+            <nav className="mt-6">
+              <ul className="flex flex-col gap-2">
+                {navigationItems.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <li key={item.href}>
+                      <SheetClose
+                        nativeButton={false}
+                        render={
+                          <Link
+                            href={item.href}
+                            className="
                             flex items-center gap-3
                             rounded-lg
                             px-3 py-3
@@ -63,19 +71,49 @@ export default function MobileNavbar() {
                             hover:bg-primary
                             hover:text-primary-foreground
                           "
-                        >
-                          <Icon size={20} />
-                          {t(item.label)}
-                        </Link>
-                      }
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </SheetContent>
-      </Sheet>
-    </div>
+                          >
+                            <Icon size={20} />
+                            {t(item.label)}
+                          </Link>
+                        }
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+
+            {/* Controls */}
+            <div className="mt-8 border-t border-border pt-6">
+              <div className="flex items-center justify-center gap-4">
+                <ThemeSelector />
+                <LanguageSelector />
+              </div>
+
+              <SheetClose
+                nativeButton={false}
+                render={
+                  <Link
+                    href="#contact"
+                    className="
+                      mt-6 flex items-cener justify-center gap-2
+                      rounded-lg
+                      border border-foreground
+                      px-6 py-3
+                      font-bold
+                      text-foreground
+                      transition-colors
+                      hover:bg-primary hover:text-primary-foreground
+                    "
+                  >
+                    <Mail size={18} /> {t("contact")}
+                  </Link>
+                }
+              />
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </nav>
   );
 }
