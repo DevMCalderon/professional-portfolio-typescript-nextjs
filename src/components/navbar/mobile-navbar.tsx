@@ -85,18 +85,13 @@ export default function MobileNavbar() {
 
             {/* Controls */}
             <div className="mt-8 border-t border-border pt-6">
-              <div className="flex items-center justify-center gap-4">
-                <ThemeSelector />
-                <LanguageSelector />
-              </div>
-
               <SheetClose
                 nativeButton={false}
                 render={
                   <Link
                     href="#contact"
                     className="
-                      mt-6 flex items-cener justify-center gap-2
+                      mb-6 flex items-cener justify-center gap-2
                       rounded-lg
                       border border-foreground
                       px-6 py-3
@@ -110,6 +105,10 @@ export default function MobileNavbar() {
                   </Link>
                 }
               />
+              <div className="flex items-center justify-center gap-4">
+                <ThemeSelector />
+                <LanguageSelector />
+              </div>
             </div>
           </SheetContent>
         </Sheet>
