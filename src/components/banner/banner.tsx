@@ -27,10 +27,7 @@ export default async function Banner() {
   ];
 
   return (
-    <section
-      id="home"
-      className="dark:bg-[linear-gradient(0deg,rgba(70,111,149,0)_0%,rgba(39,32,94,0.28)_20%,rgba(50,27,124,0.28)_55%,rgba(49,25,122,0.5)_95%)]"
-    >
+    <section id="home">
       <div className="mx-auto flex min-h-screen max-w-8/12 flex-col items-center justify-center">
         <p className="text-center text-[7rem]/25 font-bold tracking-wide text-pretty">
           <span className="font-extralight">{t("titlePrefix")}</span>{" "}

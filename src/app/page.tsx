@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <div className="backdrop-blur-[0.2rem]">
+        <div className="page-background">
           <Banner />
           <Skills />
         </div>
