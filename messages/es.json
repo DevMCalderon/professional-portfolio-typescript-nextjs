@@ -7,5 +7,21 @@
     "contact": "Contactarme",
     "language": "Idioma",
     "menu": "Menú"
+  },
+  "banner": {
+    "titlePrefix": "Construyamos",
+    "titleMiddle": "Juntos Su",
+    "titleHighlight": "Solución Ideal",
+    "description": "Optimice los procesos más tediosos de su negocio con soluciones digitales hechas a su medida.",
+    "benefits": {
+      "easyToUse": "Fácil de usar",
+      "adaptedToWorkflow": "Adaptado a su forma de trabajo",
+      "professionalDevelopment": "Desarrollo profesional"
+    },
+    "actions": {
+      "contact": "Contactarme",
+      "projects": "Ver proyectos"
+    },
+    "scrollToProfile": "Ir a la sección de perfil"
   }
 }

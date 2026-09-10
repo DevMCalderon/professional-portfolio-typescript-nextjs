@@ -7,5 +7,21 @@
     "contact": "Contact me",
     "language": "Language",
     "menu": "Menu"
+  },
+  "banner": {
+    "titlePrefix": "Let's Build",
+    "titleMiddle": "Your",
+    "titleHighlight": "Ideal Solution",
+    "description": "Optimize the most tedious processes in your business with tailored digital solutions.",
+    "benefits": {
+      "easyToUse": "Easy to use",
+      "adaptedToWorkflow": "Adapted to your workflow",
+      "professionalDevelopment": "Professional development"
+    },
+    "actions": {
+      "contact": "Contact me",
+      "projects": "View projects"
+    },
+    "scrollToProfile": "Go to the profile section"
   }
 }

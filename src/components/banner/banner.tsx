@@ -1,28 +1,31 @@
 import { Check, ChevronDown, FolderCode, Mail } from "lucide-react";
 import Link from "next/link";
 import BannerAction from "./banner-action";
-
-const benefits = [
-  "Fácil de usar",
-  "Adaptado a su forma de trabajo",
-  "Desarrollo profesional",
-];
+import { getTranslations } from "next-intl/server";
 
 const actions = [
   {
     href: "#contact",
-    label: "Contactarme",
+    translationKey: "contact",
     icon: Mail,
     primary: true,
   },
   {
     href: "#projects",
-    label: "Ver proyectos",
+    translationKey: "projects",
     icon: FolderCode,
   },
 ];
 
-export default function Banner() {
+export default async function Banner() {
+  const t = await getTranslations("banner");
+
+  const benefits = [
+    "easyToUse",
+    "adaptedToWorkflow",
+    "professionalDevelopment",
+  ];
+
   return (
     <section
       id="home"
@@ -30,13 +33,13 @@ export default function Banner() {
     >
       <div className="mx-auto flex min-h-screen max-w-8/12 flex-col items-center justify-center">
         <p className="text-center text-[7rem]/25 font-bold tracking-wide text-pretty">
-          <span className="font-extralight">Construyamos</span> Juntos Su{" "}
-          <span className="text-primary italic">Solución Ideal</span>
+          <span className="font-extralight">{t("titlePrefix")}</span>{" "}
+          {t("titleMiddle")}{" "}
+          <span className="text-primary italic">{t("titleHighlight")}</span>
         </p>
 
         <p className="mt-10 w-10/12 text-center text-2xl/9 text-muted-foreground text-pretty">
-          Optimice los procesos más tediosos de su negocio con soluciones
-          digitales hechas a su medida.
+          {t("description")}
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-base text-muted-foreground">
@@ -45,21 +48,25 @@ export default function Banner() {
               <span className="rounded-full bg-primary/10 p-1">
                 <Check size={15} className="text-primary" />
               </span>
-              {benefit}
+              {t(`benefits.${benefit}`)}
             </div>
           ))}
         </div>
 
-        <div className="mt-10 flex gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           {actions.map((action) => (
-            <BannerAction key={action.href} {...action} />
+            <BannerAction
+              key={action.href}
+              {...action}
+              label={t(`actions.${action.translationKey}`)}
+            />
           ))}
         </div>
       </div>
 
       <Link
         href="#profile"
-        aria-label="Go to the profile section"
+        aria-label={t("scrollToProfile")}
         className="animate-updown mt-[-5vw] flex justify-center"
       >
         <ChevronDown size={50} />
