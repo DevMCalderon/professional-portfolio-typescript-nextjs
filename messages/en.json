@@ -6,7 +6,8 @@
     "aboutMe": "About me",
     "contact": "Contact me",
     "language": "Language",
-    "menu": "Menu"
+    "menu": "Menu",
+    "changeTheme": "Change theme"
   },
   "banner": {
     "titlePrefix": "Let's Build",

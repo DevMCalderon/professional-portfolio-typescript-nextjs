@@ -27,7 +27,7 @@ export default function BannerAction({
       render={
         <Link href={href}>
           <span className="flex items-center gap-2">
-            <Icon size={18} />
+            <Icon size={18} aria-hidden="true" />
             {label}
           </span>
         </Link>

@@ -3,8 +3,11 @@
 import { useTheme } from "@wrksz/themes/client";
 import { Button } from "../ui/button";
 import { Moon, Sun } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function ThemeSelector() {
+  const t = useTranslations("navbar");
+
   const { resolvedTheme, setTheme } = useTheme();
   return (
     <Button
@@ -12,10 +15,14 @@ export default function ThemeSelector() {
       type="button"
       size="icon"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      aria-label="Cambiar tema"
+      aria-label={t("changeTheme")}
       className={"text-foreground hover:text-primary"}
     >
-      {resolvedTheme === "dark" ? <Sun /> : <Moon />}
+      {resolvedTheme === "dark" ? (
+        <Sun aria-hidden="true" />
+      ) : (
+        <Moon aria-hidden="true" />
+      )}
     </Button>
   );
 }

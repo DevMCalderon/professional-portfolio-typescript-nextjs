@@ -69,7 +69,7 @@ export default async function Banner() {
         aria-label={t("scrollToProfile")}
         className="animate-updown mt-[-5vw] flex justify-center"
       >
-        <ChevronDown size={50} />
+        <ChevronDown size={50} aria-hidden="true" />
       </Link>
     </section>
   );

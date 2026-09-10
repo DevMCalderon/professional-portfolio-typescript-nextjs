@@ -36,7 +36,7 @@ export default function MobileNavbar() {
                 aria-label={t("menu")}
                 className="text-foreground hover:text-primary"
               >
-                <Menu size={24} />
+                <Menu size={24} aria-hidden="true" />
               </Button>
             }
           />
@@ -72,7 +72,7 @@ export default function MobileNavbar() {
                             hover:text-primary-foreground
                           "
                           >
-                            <Icon size={20} />
+                            <Icon size={20} aria-hidden="true" />
                             {t(item.label)}
                           </Link>
                         }
@@ -101,7 +101,7 @@ export default function MobileNavbar() {
                       hover:bg-primary hover:text-primary-foreground
                     "
                   >
-                    <Mail size={18} /> {t("contact")}
+                    <Mail size={18} aria-hidden="true" /> {t("contact")}
                   </Link>
                 }
               />

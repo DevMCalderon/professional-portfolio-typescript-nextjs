@@ -33,7 +33,7 @@ export default async function Navbar() {
                       href={item.href}
                       className="nav-link flex items-center gap-2"
                     >
-                      <Icon size={18} />
+                      <Icon size={18} aria-hidden="true" />
                       {t(item.label)}
                     </Link>
                   </li>
@@ -66,7 +66,7 @@ export default async function Navbar() {
               render={
                 <Link href="#contact">
                   <span className="relative z-10 flex items-center gap-2">
-                    <Mail size={18} />
+                    <Mail size={18} aria-hidden="true" />
                     {t("contact")}
                   </span>
                 </Link>
