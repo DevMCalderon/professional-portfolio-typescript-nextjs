@@ -20,7 +20,7 @@ export default async function Navbar() {
         <div className="max-w-11/12 lg:max-w-6xl flex items-center justify-between mx-auto">
           {/* left side: logo & navigation links */}
           <div className="flex justify-center items-center gap-8">
-            <Logo width={160} height={160} />
+            <Logo width={220} height={220} />
 
             {/* central side: navigation links */}
             <ul className="flex items-center gap-8">

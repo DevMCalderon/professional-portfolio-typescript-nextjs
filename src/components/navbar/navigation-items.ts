@@ -7,6 +7,11 @@ export const navigationItems = [
     icon: House,
   },
   {
+    href: "#about",
+    label: "aboutMe",
+    icon: UserRound,
+  },
+  {
     href: "#skills",
     label: "skills",
     icon: Wrench,
@@ -15,10 +20,5 @@ export const navigationItems = [
     href: "#projects",
     label: "projects",
     icon: FolderCode,
-  },
-  {
-    href: "#about",
-    label: "aboutMe",
-    icon: UserRound,
   },
 ];

@@ -4,20 +4,20 @@ import BannerAction from "./banner-action";
 
 const benefits = [
   "Fácil de usar",
-  "Adaptado a su estilo de trabajo",
-  "Calidad garantizada",
+  "Adaptado a su forma de trabajo",
+  "Desarrollo profesional",
 ];
 
 const actions = [
   {
     href: "#contact",
-    label: "Contáctenos",
+    label: "Contactarme",
     icon: Mail,
     primary: true,
   },
   {
     href: "#projects",
-    label: "Vea nuestros proyectos",
+    label: "Ver proyectos",
     icon: FolderCode,
   },
 ];
@@ -31,21 +31,13 @@ export default function Banner() {
       <div className="mx-auto flex min-h-screen max-w-8/12 flex-col items-center justify-center">
         <p className="text-center text-[7rem]/25 font-bold tracking-wide text-pretty">
           <span className="font-extralight">Construyamos</span> Juntos Su{" "}
-          <span className="text-primary italic">App Perfecta</span>
+          <span className="text-primary italic">Solución Ideal</span>
         </p>
 
         <p className="mt-10 w-10/12 text-center text-2xl/9 text-muted-foreground text-pretty">
-          Optimice los procesos más tediosos de su empresa con solo un click.
-          Nuestro equipo de especialistas ofrece consultoría y soluciones
-          digitales modernas para todo tipo de problemas empresariales, sin
-          anticipos.
+          Optimice los procesos más tediosos de su negocio con soluciones
+          digitales hechas a su medida.
         </p>
-
-        <div className="mt-10 flex gap-4">
-          {actions.map((action) => (
-            <BannerAction key={action.href} {...action} />
-          ))}
-        </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-base text-muted-foreground">
           {benefits.map((benefit) => (
@@ -55,6 +47,12 @@ export default function Banner() {
               </span>
               {benefit}
             </div>
+          ))}
+        </div>
+
+        <div className="mt-10 flex gap-4">
+          {actions.map((action) => (
+            <BannerAction key={action.href} {...action} />
           ))}
         </div>
       </div>
