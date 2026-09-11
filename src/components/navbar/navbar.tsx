@@ -8,48 +8,47 @@ import { getTranslations } from "next-intl/server";
 import { Mail } from "lucide-react";
 import { navigationItems } from "./navigation-items";
 import Logo from "../logo";
+import Container from "../container";
 
 export default async function Navbar() {
   const t = await getTranslations("navbar");
   return (
-    <header id="top" className="w-full">
-      <nav
-        className="fixed top-0 z-10 hidden w-full py-2 lg:block
-        "
-      >
-        <div className="max-w-11/12 lg:max-w-6xl flex items-center justify-between mx-auto">
-          {/* left side: logo & navigation links */}
-          <div className="flex justify-center items-center gap-8">
-            <Logo width={220} height={220} />
+    <>
+      <header id="top">
+        <nav className="fixed top-0 left-0 z-10 hidden w-full lg:block">
+          <Container className="flex items-center justify-between py-2">
+            {/* left side: logo & navigation links */}
+            <div className="flex justify-center items-center gap-8">
+              <Logo width={220} height={220} />
 
-            {/* central side: navigation links */}
-            <ul className="flex items-center gap-8">
-              {navigationItems.map((item) => {
-                const Icon = item.icon;
+              {/* central side: navigation links */}
+              <ul className="flex items-center gap-8">
+                {navigationItems.map((item) => {
+                  const Icon = item.icon;
 
-                return (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="nav-link flex items-center gap-2"
-                    >
-                      <Icon size={18} aria-hidden="true" />
-                      {t(item.label)}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="nav-link flex items-center gap-2"
+                      >
+                        <Icon size={18} aria-hidden="true" />
+                        {t(item.label)}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
 
-          {/* right side: language CTA */}
-          <div className="flex items-center gap-8">
-            <ThemeSelector />
-            <LanguageSelector />
+            {/* right side: language CTA */}
+            <div className="flex items-center gap-8">
+              <ThemeSelector />
+              <LanguageSelector />
 
-            <Button
-              nativeButton={false}
-              className="
+              <Button
+                nativeButton={false}
+                className="
                 group
                 relative inline-flex items-center justify-center
                 overflow-hidden text-nowrap
@@ -63,20 +62,22 @@ export default async function Navbar() {
                 before:transition-[width] before:duration-300 before:ease-in-out
                 hover:before:w-full
               "
-              render={
-                <Link href="#contact">
-                  <span className="relative z-10 flex items-center gap-2">
-                    <Mail size={18} aria-hidden="true" />
-                    {t("contact")}
-                  </span>
-                </Link>
-              }
-            />
-          </div>
-        </div>
-      </nav>
-      <MobileNavbar />
+                render={
+                  <Link href="#contact">
+                    <span className="relative z-10 flex items-center gap-2">
+                      <Mail size={18} aria-hidden="true" />
+                      {t("contact")}
+                    </span>
+                  </Link>
+                }
+              />
+            </div>
+          </Container>
+        </nav>
+        <MobileNavbar />
+      </header>
+
       <GoTopButton />
-    </header>
+    </>
   );
 }

@@ -17,14 +17,15 @@ import {
 import LanguageSelector from "./language-selector";
 import ThemeSelector from "./theme-selector";
 import Logo from "../logo";
+import Container from "../container";
 
 export default function MobileNavbar() {
   const t = useTranslations("navbar");
 
   return (
     <nav className="fixed top-0 right-0 z-50 w-full lg:hidden">
-      <div className="max-w-11/12 mx-auto flex items-center justify-between py-2">
-        <Logo width={120} height={120} />
+      <Container className="flex items-center justify-between py-2">
+        <Logo width={160} height={160} />
 
         <Sheet>
           {/* Menu trigger */}
@@ -112,7 +113,7 @@ export default function MobileNavbar() {
             </div>
           </SheetContent>
         </Sheet>
-      </div>
+      </Container>
     </nav>
   );
 }

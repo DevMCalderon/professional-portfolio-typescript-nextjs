@@ -2,6 +2,7 @@ import { Check, ChevronDown, FolderCode, Mail } from "lucide-react";
 import Link from "next/link";
 import BannerAction from "./banner-action";
 import { getTranslations } from "next-intl/server";
+import Container from "../container";
 
 const actions = [
   {
@@ -28,46 +29,48 @@ export default async function Banner() {
 
   return (
     <section id="home">
-      <div className="mx-auto flex min-h-screen max-w-8/12 flex-col items-center justify-center">
-        <p className="text-center text-[7rem]/25 font-bold tracking-wide text-pretty">
-          <span className="font-extralight">{t("titlePrefix")}</span>{" "}
-          {t("titleMiddle")}{" "}
-          <span className="text-primary italic">{t("titleHighlight")}</span>
-        </p>
+      <Container>
+        <div className="flex min-h-screen flex-col items-center justify-center">
+          <p className="text-center text-[7rem]/25 font-bold tracking-wide text-pretty">
+            <span className="font-extralight">{t("titlePrefix")}</span>{" "}
+            {t("titleMiddle")}{" "}
+            <span className="text-primary italic">{t("titleHighlight")}</span>
+          </p>
 
-        <p className="mt-10 w-10/12 text-center text-2xl/9 text-muted-foreground text-pretty">
-          {t("description")}
-        </p>
+          <p className="mt-10 w-10/12 text-center text-2xl/9 text-muted-foreground text-pretty">
+            {t("description")}
+          </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-base text-muted-foreground">
-          {benefits.map((benefit) => (
-            <div key={benefit} className="flex items-center gap-2">
-              <span className="rounded-full bg-primary/10 p-1">
-                <Check size={15} className="text-primary" />
-              </span>
-              {t(`benefits.${benefit}`)}
-            </div>
-          ))}
+          <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-base text-muted-foreground">
+            {benefits.map((benefit) => (
+              <div key={benefit} className="flex items-center gap-2">
+                <span className="rounded-full bg-primary/10 p-1">
+                  <Check size={15} className="text-primary" />
+                </span>
+                {t(`benefits.${benefit}`)}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            {actions.map((action) => (
+              <BannerAction
+                key={action.href}
+                {...action}
+                label={t(`actions.${action.translationKey}`)}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          {actions.map((action) => (
-            <BannerAction
-              key={action.href}
-              {...action}
-              label={t(`actions.${action.translationKey}`)}
-            />
-          ))}
-        </div>
-      </div>
-
-      <Link
-        href="#profile"
-        aria-label={t("scrollToProfile")}
-        className="animate-updown mt-[-5vw] flex justify-center"
-      >
-        <ChevronDown size={50} aria-hidden="true" />
-      </Link>
+        <Link
+          href="#profile"
+          aria-label={t("scrollToProfile")}
+          className="animate-updown mt-[-5vw] flex justify-center"
+        >
+          <ChevronDown size={50} aria-hidden="true" />
+        </Link>
+      </Container>
     </section>
   );
 }

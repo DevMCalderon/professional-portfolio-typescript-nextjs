@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+
       <main>
         <div className="page-background">
           <Banner />
@@ -17,8 +18,9 @@ export default function Home() {
         </div>
         <ProjectsSection />
         <AboutMe />
+        <Contact />
       </main>
-      <Contact />
+
       <Footer />
     </>
   );

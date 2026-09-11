@@ -162,19 +162,19 @@
     z-index: -1;
 
     background-image:
-      linear-gradient(rgba(252, 252, 252, 0.795)), url("/images/bg1-light.jpg");
+      linear-gradient(rgba(255, 255, 255, 0.8)), url("/images/bg1-light.jpg");
 
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    filter: blur(5px);
+    filter: blur(3px);
   }
 
   .dark .page-background::before {
     background-image:
-      linear-gradient(rgba(9, 9, 14, 0.822)), url("/images/bg1-dark.jpg");
+      linear-gradient(rgba(23, 23, 23, 0.85)), url("/images/bg1-dark.jpg");
   }
 
   .nav-link {
