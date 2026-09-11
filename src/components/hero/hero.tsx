@@ -1,6 +1,6 @@
 import { Check, ChevronDown, FolderCode, Mail } from "lucide-react";
 import Link from "next/link";
-import BannerAction from "./banner-action";
+import HeroAction from "./hero-action";
 import { getTranslations } from "next-intl/server";
 import Container from "../container";
 
@@ -18,8 +18,8 @@ const actions = [
   },
 ];
 
-export default async function Banner() {
-  const t = await getTranslations("banner");
+export default async function Hero() {
+  const t = await getTranslations("hero");
 
   const benefits = [
     "easyToUse",
@@ -54,7 +54,7 @@ export default async function Banner() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             {actions.map((action) => (
-              <BannerAction
+              <HeroAction
                 key={action.href}
                 {...action}
                 label={t(`actions.${action.translationKey}`)}

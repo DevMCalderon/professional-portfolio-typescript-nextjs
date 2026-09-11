@@ -1,6 +1,6 @@
 import Contact from "@/components/contact/contact";
 import Navbar from "@/components/navbar/navbar";
-import Banner from "@/components/banner/banner";
+import Hero from "@/components/hero/hero";
 import Skills from "@/components/skills/skills";
 import ProjectsSection from "@/components/projects/projects-section";
 import AboutMe from "@/components/about-me/about-me";
@@ -13,7 +13,7 @@ export default function Home() {
 
       <main>
         <div className="page-background">
-          <Banner />
+          <Hero />
           <Skills />
         </div>
         <ProjectsSection />

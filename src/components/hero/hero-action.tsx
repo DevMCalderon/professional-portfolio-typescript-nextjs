@@ -2,19 +2,19 @@ import { Button } from "@base-ui/react";
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
-interface BannerActionProps {
+interface HeroActionProps {
   href: string;
   label: string;
   icon: LucideIcon;
   primary?: boolean;
 }
 
-export default function BannerAction({
+export default function HeroAction({
   href,
   label,
   icon: Icon,
   primary = false,
-}: BannerActionProps) {
+}: HeroActionProps) {
   return (
     <Button
       nativeButton={false}
