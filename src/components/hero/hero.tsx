@@ -41,7 +41,7 @@ export default async function Hero() {
             {t("description")}
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-base text-muted-foreground">
+          <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-lg text-muted-foreground">
             {benefits.map((benefit) => (
               <div key={benefit} className="flex items-center gap-2">
                 <span className="rounded-full bg-primary/10 p-1">

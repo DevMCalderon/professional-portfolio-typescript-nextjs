@@ -7,8 +7,8 @@ export const navigationItems = [
     icon: House,
   },
   {
-    href: "#about",
-    label: "aboutMe",
+    href: "#profile",
+    label: "profile",
     icon: UserRound,
   },
   {

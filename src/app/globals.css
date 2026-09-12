@@ -1,3 +1,20 @@
+/*
+ * Design conventions
+ *
+ * Text:
+ * text-sm  → metadata
+ * text-base → secondary text
+ * text-lg → body text
+ * text-2xl → subsection titles
+ * text-3xl → section titles
+ *
+ * Spacing:
+ * gap-2 → tight
+ * gap-4 → related content
+ * gap-6 → subsection spacing
+ * gap-10 → major spacing
+ */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -177,6 +194,14 @@
       linear-gradient(rgba(23, 23, 23, 0.85)), url("/images/bg1-dark.jpg");
   }
 
+  .link {
+    @apply text-sm md:text-lg 
+    duration-300 ease-in-out relative 
+    underline underline-offset-8 italic
+    transition-colors
+    text-accent-foreground
+    hover:text-primary;
+  }
   .nav-link {
     @apply text-sm md:text-base font-medium tracking-[0.8px] duration-300 ease-in-out relative 
     py-2
