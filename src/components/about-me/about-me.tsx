@@ -4,6 +4,29 @@ import Image from "next/image";
 import { CodeXml, UserRound } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+const links = [
+  {
+    href: process.env.NEXT_PUBLIC_CV_URL ?? "#",
+    label: "Currículum vitae",
+    icon: UserRound,
+  },
+  {
+    href: process.env.NEXT_PUBLIC_PORTFOLIO_REPOSITORY_URL ?? "#",
+    label: "Ver código fuente del sitio",
+    icon: CodeXml,
+  },
+  {
+    href: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "#",
+    label: "LinkedIn",
+    icon: FaLinkedin,
+  },
+  {
+    href: process.env.NEXT_PUBLIC_GITHUB_URL ?? "#",
+    label: "GitHub",
+    icon: FaGithub,
+  },
+];
+
 export default function AboutMe() {
   return (
     <section id="profile" className="mt-20">
@@ -74,7 +97,7 @@ export default function AboutMe() {
         </div>
 
         {/* Right side */}
-        <div className="w-5/12 flex justify-center self-start">
+        <div className="w-5/12 flex justify-end self-start">
           <div>
             {/* TODO: reemplazar por ImageReflection */}
             <Image
@@ -82,54 +105,25 @@ export default function AboutMe() {
               alt="Martín Calderón"
               width={290}
               height={290}
-              className="rounded-full border-4 border-background opacity-90 shadow-2xl bg-primary w-[70%] md:w-1/2 lg:w-[18rem] mt-16 lg:mt-0"
+              className="rounded-full border-4 border-background shadow-2xl bg-primary/90 w-[70%] md:w-1/2 lg:w-[18rem] mt-16 lg:mt-0"
             />
 
             {/* Main links */}
-            <div className="mt-6 ml-6">
-              <div className="mt-3 flex flex-col gap-4">
-                <Link
-                  href={process.env.NEXT_PUBLIC_CV_URL ?? "#"}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link flex gap-3 items-center"
-                >
-                  <UserRound size={20} /> Currículum vitae
-                </Link>
-                <Link
-                  href={process.env.NEXT_PUBLIC_PORTFOLIO_REPOSITORY_URL ?? "#"}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link flex gap-3 items-center"
-                >
-                  <CodeXml size={20} /> Ver código fuente del sitio
-                </Link>
+            <div className="mt-6">
+              <div className="flex flex-col gap-2">
+                {links.map(({ href, label, icon: Icon }) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="link flex items-center gap-3"
+                  >
+                    <Icon size={20} aria-hidden="true" />
+                    {label}
+                  </Link>
+                ))}
               </div>
-
-              {/* More links */}
-              <nav
-                aria-label="Otros enlaces de interés"
-                className="flex flex-col gap-4"
-              >
-                <Link
-                  href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "#"}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link flex gap-3 items-center"
-                >
-                  <FaLinkedin size={20} aria-hidden="true" />
-                  LinkedIn
-                </Link>
-                <Link
-                  href={process.env.NEXT_PUBLIC_GITHUB_URL ?? "#"}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link flex gap-3 items-center"
-                >
-                  <FaGithub size={20} aria-hidden="true" />
-                  GitHub
-                </Link>
-              </nav>
             </div>
           </div>
         </div>
