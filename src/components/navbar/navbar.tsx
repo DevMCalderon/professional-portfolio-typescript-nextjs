@@ -15,7 +15,7 @@ export default async function Navbar() {
   return (
     <>
       <header id="top">
-        <nav className="fixed top-0 left-0 z-10 hidden w-full lg:block">
+        <nav className="fixed top-0 left-0 z-10 hidden w-full lg:block bg-background/80">
           <Container className="flex items-center justify-between py-2">
             {/* left side: logo & navigation links */}
             <div className="flex justify-center items-center gap-8">

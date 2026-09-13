@@ -4,7 +4,7 @@ import Image from "next/image";
 import { CodeXml, UserRound } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-const links = [
+const profileLinks = [
   {
     href: process.env.NEXT_PUBLIC_CV_URL ?? "#",
     label: "Currículum vitae",
@@ -12,7 +12,7 @@ const links = [
   },
   {
     href: process.env.NEXT_PUBLIC_PORTFOLIO_REPOSITORY_URL ?? "#",
-    label: "Ver código fuente del sitio",
+    label: "Código del sitio",
     icon: CodeXml,
   },
   {
@@ -27,32 +27,60 @@ const links = [
   },
 ];
 
-export default function AboutMe() {
+export default function Profile() {
   return (
     <section id="profile" className="mt-20">
-      <Container className="flex items-center justify-between bg-background/80 border-primary border py-30 px-20 rounded-3xl">
+      <Container className="flex bg-background/80 border-primary border rounded-3xl max-w-[1600px] overflow-clip">
         {/* Left side */}
-        <div className="w-7/12 flex flex-col gap-6 text-lg">
-          {/* Presentation */}
-          <div className="flex flex-col gap-4">
-            <p className="text-2xl text-primary font-bold">
-              ¿Quién está detrás de esas soluciones?
-            </p>
-            <div className="p-4 bg-primary/10 rounded-4xl flex flex-col gap-4">
+        <div className="w-6/12 flex flex-col gap-6 text-8xl text-background font-bold bg-primary text-center justify-center py-20 px-12 image-background profile-background">
+          <p>¿Quién está detrás de esas soluciones?</p>
+        </div>
+
+        {/* Right side */}
+        <div className="w-6/12 flex flex-col justify-end self-start gap-6 py-24 px-10 text-lg">
+          <div className="flex items-center justify-center gap-6">
+            {/* TODO: reemplazar por ImageReflection */}
+            <Image
+              src="/images/profile.png"
+              alt="Martín Calderón"
+              width={290}
+              height={290}
+              className="rounded-full border-4 border-background shadow-2xl bg-primary/90 w-[70%] md:w-1/2 lg:w-52 mt-16 lg:mt-0"
+            />
+            {/* Presentation */}
+            <div className="flex flex-col gap-4 rounded-4xl bg-primary/10 p-5">
               <h1 className="text-4xl font-bold text-pretty">
                 <span className="text-accent-foreground">
                   Ingeniero en Software:
                 </span>{" "}
-                Martín Samuel Calderón Ojeda
+                Martín S. Calderón O.
               </h1>
 
               <p>
-                Desarrollador Full-Stack especializado en Next.js, Laravel y
-                arquitectura de software con +3 años de experiencia freelance
-                construyendo software con tecnologías de última generación.
+                Desarrollador Full-Stack de México especializado en Next.js,
+                Laravel y arquitectura de software con +3 años de experiencia
+                freelance construyendo software con tecnologías de última
+                generación.
               </p>
             </div>
           </div>
+
+          {/* Main links */}
+          <div className="mt-6 flex gap-10">
+            {profileLinks.map(({ href, label, icon: Icon }) => (
+              <Link
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="link flex items-center gap-3"
+              >
+                <Icon size={20} aria-hidden="true" />
+                {label}
+              </Link>
+            ))}
+          </div>
+
           {/* Experience */}
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl text-primary font-bold">Experiencia</h2>
@@ -93,38 +121,6 @@ export default function AboutMe() {
               En la actualidad, dedico la mayor parte de mi tiempo al desarrollo
               de habilidades que potencien mi desempeño profesional.
             </p>
-          </div>
-        </div>
-
-        {/* Right side */}
-        <div className="w-5/12 flex justify-end self-start">
-          <div>
-            {/* TODO: reemplazar por ImageReflection */}
-            <Image
-              src="/images/profile.png"
-              alt="Martín Calderón"
-              width={290}
-              height={290}
-              className="rounded-full border-4 border-background shadow-2xl bg-primary/90 w-[70%] md:w-1/2 lg:w-[18rem] mt-16 lg:mt-0"
-            />
-
-            {/* Main links */}
-            <div className="mt-6">
-              <div className="flex flex-col gap-2">
-                {links.map(({ href, label, icon: Icon }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="link flex items-center gap-3"
-                  >
-                    <Icon size={20} aria-hidden="true" />
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </Container>

@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar/navbar";
 import Hero from "@/components/hero/hero";
 import Skills from "@/components/skills/skills";
 import ProjectsSection from "@/components/projects/projects-section";
-import AboutMe from "@/components/about-me/about-me";
+import Profile from "@/components/about-me/profile";
 import Footer from "@/components/footer/footer";
 
 export default function Home() {
@@ -12,9 +12,9 @@ export default function Home() {
       <Navbar />
 
       <main>
-        <div className="page-background">
+        <div className="image-background page-background">
           <Hero />
-          <AboutMe />
+          <Profile />
           <Skills />
         </div>
         <ProjectsSection />

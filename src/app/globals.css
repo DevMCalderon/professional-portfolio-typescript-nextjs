@@ -167,31 +167,43 @@
 }
 
 @layer components {
-  .page-background {
+  .image-background {
     position: relative;
     isolation: isolate;
   }
 
-  .page-background::before {
+  .image-background::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
 
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.8)), url("/images/bg1-light.jpg");
+    background-image: var(--background-image);
 
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    filter: blur(3px);
+    filter: blur(var(--background-blur));
+  }
+
+  .page-background {
+    --background-image:
+      linear-gradient(rgba(255, 255, 255, 0.8)), url("/images/bg1-light.jpg");
+    --background-blur: 3px;
   }
 
   .dark .page-background::before {
-    background-image:
+    --background-image:
       linear-gradient(rgba(23, 23, 23, 0.85)), url("/images/bg1-dark.jpg");
+  }
+
+  .profile-background {
+    --background-image:
+      linear-gradient(rgba(245, 159, 11, 0.9)), url("/images/bg2.jpg");
+
+    --background-blur: 5px;
   }
 
   .link {

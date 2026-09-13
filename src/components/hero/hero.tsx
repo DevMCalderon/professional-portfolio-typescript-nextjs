@@ -32,7 +32,7 @@ export default async function Hero() {
       <Container>
         <div className="flex min-h-screen flex-col items-center justify-center">
           <p className="text-center text-[7rem]/25 font-bold tracking-wide text-pretty">
-            <span className="font-extralight">{t("titlePrefix")}</span>{" "}
+            <span className="font-light">{t("titlePrefix")}</span>{" "}
             {t("titleMiddle")}{" "}
             <span className="text-primary italic">{t("titleHighlight")}</span>
           </p>
