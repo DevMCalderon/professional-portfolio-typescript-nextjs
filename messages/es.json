@@ -24,5 +24,34 @@
       "projects": "Ver proyectos"
     },
     "scrollToProfile": "Ir a la sección de perfil"
+  },
+  "profile": {
+    "tagline": "¿Quién está detrás de esas soluciones?",
+    "imageAlt": "Martín Calderón",
+    "titlePrefix": "Ingeniero en Software:",
+    "name": "Martín S. Calderón O.",
+    "description": "Desarrollador Full-Stack de México especializado en Next.js, Laravel y arquitectura de software con +3 años de experiencia freelance construyendo software con tecnologías de última generación.",
+    "links": {
+      "resume": "Currículum vitae",
+      "sourceCode": "Código del sitio",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "experience": {
+      "title": "Experiencia",
+      "description": "Experiencia creando plataformas ecommerce y sistemas de gestión para universidades, veterinarias, cafeterías y otros negocios."
+    },
+    "workflow": {
+      "title": "Forma de trabajo",
+      "requirements": "Trabajo en todas las fases del desarrollo: levantamiento de requisitos, diseño, implementación, pruebas y despliegue.",
+      "communication": "Comunicación proactiva con clientes y equipos remotos.",
+      "quality": "Enfocado en la calidad."
+    },
+    "philosophy": {
+      "title": "Filosofía",
+      "challenge": "Me gustan los retos, me gusta la incomodidad. Mi ley de vida es: \"Si te propones algo, trabaja con todo lo que tienes hasta lograrlo.\"",
+      "engineering": "Apasionado de la ingeniería. Aspiro a dominar todo lo necesario para construir software de alto nivel.",
+      "currentFocus": "En la actualidad, dedico la mayor parte de mi tiempo al desarrollo de habilidades que potencien mi desempeño profesional."
+    } 
   }
 }
