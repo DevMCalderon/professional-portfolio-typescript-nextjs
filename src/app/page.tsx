@@ -5,8 +5,11 @@ import Skills from "@/components/skills/skills";
 import ProjectsSection from "@/components/projects/projects-section";
 import Profile from "@/components/about-me/profile";
 import Footer from "@/components/footer/footer";
+import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations("");
   return (
     <>
       <Navbar />
@@ -17,11 +20,17 @@ export default function Home() {
           <Profile />
           <Skills />
         </div>
-        <ProjectsSection />
-        <Contact />
+        {/* <ProjectsSection /> */}
+        {/* <Contact /> */}
+        <Link
+          href="https://devmcalderon.github.io/"
+          className="link text-2xl flex justify-center mb-20"
+        >
+          {t("buildingMessage")}
+        </Link>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
