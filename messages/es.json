@@ -53,5 +53,32 @@
       "engineering": "Apasionado de la ingeniería. Aspiro a dominar todo lo necesario para construir software de alto nivel.",
       "currentFocus": "En la actualidad, dedico la mayor parte de mi tiempo al desarrollo de habilidades que potencien mi desempeño profesional."
     } 
+  },
+  "skills": {
+    "title": "Habilidades",
+    "mainSkills": "Especializado en:",
+    "complementarySkills": "Tecnologías complementarias:",
+    "items": {
+      "nextjs": "Next.js",
+      "react": "React",
+      "laravel": "Laravel",
+      "typescript": "TypeScript",
+      "javascript": "JavaScript",
+      "php": "PHP",
+      "vue": "Vue.js",
+      "nodejs": "Node.js",
+      "html": "HTML5",
+      "css": "CSS3",
+      "tailwind": "Tailwind CSS",
+      "bootstrap": "Bootstrap",
+      "mysql": "MySQL",
+      "git": "Git",
+      "docker": "Docker",
+      "linux": "Linux",
+      "wordpress": "WordPress",
+      "figma": "Figma",
+      "adobeXd": "Adobe XD",
+      "postman": "Postman"
+    }
   }
 }

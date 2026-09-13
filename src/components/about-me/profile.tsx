@@ -35,12 +35,12 @@ export default async function Profile() {
     <section id="profile" className="mt-20">
       <Container className="flex bg-background/80 border-primary border rounded-3xl max-w-[1600px] overflow-clip">
         {/* Left side */}
-        <div className="w-6/12 flex flex-col gap-6 text-8xl text-background font-bold bg-primary text-center justify-center py-20 px-12 image-background profile-background">
+        <div className="w-6/12 flex flex-col gap-6 text-8xl text-background font-bold bg-primary text-center justify-center px-12 image-background profile-background">
           <p>{t("tagline")}</p>
         </div>
 
         {/* Right side */}
-        <div className="w-6/12 flex flex-col justify-end self-start gap-6 py-24 px-10 text-lg">
+        <div className="w-6/12 flex flex-col justify-end self-start gap-6 py-16 px-10 text-lg">
           <div className="flex items-center justify-center gap-6">
             {/* TODO: reemplazar por ImageReflection */}
             <Image

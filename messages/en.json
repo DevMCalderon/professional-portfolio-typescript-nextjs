@@ -53,5 +53,32 @@
       "engineering": "Passionate about engineering. I aspire to master everything necessary to build high-level software.",
       "currentFocus": "Currently, I dedicate most of my time to developing skills that enhance my professional performance."
     }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "mainSkills": "Especializado en:",
+    "complementarySkills": "Tecnologías complementarias:",
+    "items": {
+      "nextjs": "Next.js",
+      "react": "React",
+      "laravel": "Laravel",
+      "typescript": "TypeScript",
+      "javascript": "JavaScript",
+      "php": "PHP",
+      "vue": "Vue.js",
+      "nodejs": "Node.js",
+      "html": "HTML5",
+      "css": "CSS3",
+      "tailwind": "Tailwind CSS",
+      "bootstrap": "Bootstrap",
+      "mysql": "MySQL",
+      "git": "Git",
+      "docker": "Docker",
+      "linux": "Linux",
+      "wordpress": "WordPress",
+      "figma": "Figma",
+      "adobeXd": "Adobe XD",
+      "postman": "Postman"
+    }
   }
 }
