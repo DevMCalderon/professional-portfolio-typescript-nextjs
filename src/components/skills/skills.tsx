@@ -1,34 +1,82 @@
-import Container from "../container";
 import { getTranslations } from "next-intl/server";
 import { skills } from "@/data/skills";
+import SkillItem from "./skill-item";
+import Container from "../container";
 
 export default async function Skills() {
   const t = await getTranslations("skills");
+
+  const groupedSkills = skills.reduce<Record<string, typeof skills>>(
+    (groups, skill) => {
+      groups[skill.group] ??= [];
+      groups[skill.group].push(skill);
+
+      return groups;
+    },
+    {},
+  );
+
+  const mainSkills = groupedSkills.mainSkills ?? [];
+
+  const complementaryGroups = Object.entries(groupedSkills).filter(
+    ([group]) => group !== "mainSkills",
+  );
+
   return (
-    <section id="skills" className="mt-20">
-      <Container className="flex flex-col max-w-[1600px] overflow-clip gap-6 py-16 px-10 items-center text-center">
-        <h2 className="text-4xl">Habilidades</h2>
-        {/* main skills */}
-        <h3 className="text-2xl">Especializado en:</h3>
-        <div className="flex gap-4">
-          {skills.map(({ translationKey, icon: Icon, color }) => (
-            <div
-              key={translationKey}
-              className="flex items-center gap-2 rounded-xl border px-6 py-2 text-xl"
-              style={{
-                backgroundColor: `${color}20`,
-                borderColor: color,
-                color,
-              }}
-            >
-              <Icon size={25} aria-hidden="true" />
-              {t(`items.${translationKey}`)}
-            </div>
-          ))}
+    <section
+      id="skills"
+      className="bg-background mt-20 border-primary border-y overflow-hidden"
+    >
+      <Container className="flex max-w-[1600px] flex-col gap-12 px-6 py-20 text-center md:px-10">
+        {/* Header */}
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-4xl font-bold md:text-5xl text-primary">
+            {t("title")}
+          </h2>
         </div>
-        {/* complementary skills */}
-        <div>
-          <h3 className="text-2xl">Tecnologías complementarias:</h3>
+
+        {/* Main skills */}
+        <section className="flex flex-col gap-6">
+          <h3 className="text-2xl font-bold md:text-3xl">
+            {t("groups.mainSkills")}
+          </h3>
+
+          <div className="flex flex-wrap justify-center gap-5">
+            {mainSkills.map(({ translationKey, icon: Icon, color }) => (
+              <SkillItem
+                key={translationKey}
+                label={t(`items.${translationKey}`)}
+                icon={Icon}
+                color={color}
+                featured
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Complementary skills */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {complementaryGroups.map(([group, groupSkills]) => (
+            <section
+              key={group}
+              className="flex flex-col gap-5 rounded-3xl border border-border bg-background/60 p-6 text-left backdrop-blur-sm shadow-md/[0.04]"
+            >
+              <div>
+                <h3 className="text-2xl font-bold">{t(`groups.${group}`)}</h3>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                {groupSkills.map(({ translationKey, icon: Icon, color }) => (
+                  <SkillItem
+                    key={translationKey}
+                    label={t(`items.${translationKey}`)}
+                    icon={Icon}
+                    color={color}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </Container>
     </section>

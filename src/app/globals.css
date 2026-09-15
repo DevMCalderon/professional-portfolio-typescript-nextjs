@@ -125,7 +125,7 @@
   --card-foreground: hsl(0 0% 89.8039%);
   --popover: hsl(0 0% 14.902%);
   --popover-foreground: hsl(0 0% 89.8039%);
-  --primary: hsl(37.6923 92.126% 50.1961%);
+  --primary: rgb(245, 158, 11);
   --primary-foreground: hsl(0 0% 0%);
   --secondary: hsl(0 0% 14.902%);
   --secondary-foreground: hsl(0 0% 89.8039%);
@@ -201,7 +201,7 @@
 
   .profile-background {
     --background-image:
-      linear-gradient(rgba(245, 159, 11, 0.9)), url("/images/bg2.jpg");
+      linear-gradient(rgba(245, 158, 11, 0.9)), url("/images/bg2.jpg");
 
     --background-blur: 5px;
   }

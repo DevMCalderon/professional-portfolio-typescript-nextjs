@@ -35,7 +35,7 @@ export default async function Profile() {
     <section id="profile" className="mt-20">
       <Container className="flex bg-background/80 border-primary border rounded-3xl max-w-[1600px] overflow-clip">
         {/* Left side */}
-        <div className="w-6/12 flex flex-col gap-6 text-8xl text-background font-bold bg-primary text-center justify-center px-12 image-background profile-background">
+        <div className="w-6/12 flex flex-col gap-6 text-8xl text-background font-bold bg-primary text-center justify-center px-12 image-background profile-background overflow-hidden">
           <p>{t("tagline")}</p>
         </div>
 

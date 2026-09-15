@@ -23,7 +23,9 @@ export default async function Home() {
         {/* <ProjectsSection /> */}
         {/* <Contact /> */}
         <Link
-          href="https://devmcalderon.github.io/"
+          href="https://devmcalderon.github.io/proyectos/apps-y-plataformas-web"
+          target="_blank"
+          rel="noreferrer noopener"
           className="link text-2xl flex justify-center mb-20"
         >
           {t("buildingMessage")}
