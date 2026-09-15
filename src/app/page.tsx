@@ -26,7 +26,7 @@ export default async function Home() {
           href="https://devmcalderon.github.io/proyectos/apps-y-plataformas-web"
           target="_blank"
           rel="noreferrer noopener"
-          className="link text-2xl flex justify-center mb-20"
+          className="link text-2xl flex justify-center mb-20 px-10 md:px-0"
         >
           {t("buildingMessage")}
         </Link>

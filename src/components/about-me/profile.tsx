@@ -33,26 +33,26 @@ export default async function Profile() {
 
   return (
     <section id="profile" className="mt-20">
-      <Container className="flex bg-background/80 border-primary border rounded-3xl max-w-[1600px] overflow-clip">
+      <Container className="flex flex-wrap bg-background/80 border-primary border rounded-3xl max-w-[1600px] overflow-hidden">
         {/* Left side */}
-        <div className="w-6/12 flex flex-col gap-6 text-8xl text-background font-bold bg-primary text-center justify-center px-12 image-background profile-background overflow-hidden">
+        <div className="lg:w-6/12 flex flex-col gap-6 text-6xl md:text-8xl text-background font-bold bg-primary text-center justify-center px-6 py-12 md:px-12 lg:py-0 image-background profile-background overflow-hidden">
           <p>{t("tagline")}</p>
         </div>
 
         {/* Right side */}
-        <div className="w-6/12 flex flex-col justify-end self-start gap-6 py-16 px-10 text-lg">
-          <div className="flex items-center justify-center gap-6">
+        <div className="lg:w-6/12 flex flex-col justify-end self-start gap-6 py-16 px-5 md:px-10 text-lg">
+          <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-6">
             {/* TODO: reemplazar por ImageReflection */}
             <Image
               src="/images/profile.png"
               alt="Martín Calderón"
               width={290}
               height={290}
-              className="rounded-full border-4 border-background shadow-2xl bg-primary/90 w-[70%] md:w-1/2 lg:w-52 mt-16 lg:mt-0"
+              className="rounded-full border-4 border-background shadow-2xl bg-primary/90 w-1/2 lg:w-52"
             />
             {/* Presentation */}
-            <div className="flex flex-col gap-4 rounded-4xl bg-primary/10 p-5">
-              <h1 className="text-4xl font-bold text-pretty">
+            <div className="flex flex-col gap-4 rounded-4xl bg-primary/10 p-3 md:p-5">
+              <h1 className="text-3xl md:text-4xl font-bold text-pretty">
                 <span className="text-accent-foreground">
                   {t("titlePrefix")}{" "}
                 </span>{" "}
@@ -64,7 +64,7 @@ export default async function Profile() {
           </div>
 
           {/* Main links */}
-          <div className="mt-6 flex gap-10">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-10">
             {profileLinks.map(({ href, translationKey, icon: Icon }) => (
               <Link
                 key={translationKey}

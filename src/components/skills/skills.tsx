@@ -30,7 +30,7 @@ export default async function Skills() {
       <Container className="flex max-w-[1600px] flex-col gap-12 px-6 py-20 text-center md:px-10">
         {/* Header */}
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-4xl font-bold md:text-5xl text-primary">
+          <h2 className="text-3xl font-bold md:text-4xl text-primary">
             {t("title")}
           </h2>
         </div>
@@ -59,13 +59,13 @@ export default async function Skills() {
           {complementaryGroups.map(([group, groupSkills]) => (
             <section
               key={group}
-              className="flex flex-col gap-5 rounded-3xl border border-border bg-background/60 p-6 text-left backdrop-blur-sm shadow-md/[0.04]"
+              className="flex min-w-0 flex-col gap-5 rounded-3xl border border-border bg-background/60 p-6 text-left shadow-md/[0.04] backdrop-blur-sm"
             >
               <div>
                 <h3 className="text-2xl font-bold">{t(`groups.${group}`)}</h3>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
                 {groupSkills.map(({ translationKey, icon: Icon, color }) => (
                   <SkillItem
                     key={translationKey}

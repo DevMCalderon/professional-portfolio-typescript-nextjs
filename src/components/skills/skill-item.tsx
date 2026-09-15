@@ -19,8 +19,8 @@ export default function SkillItem({
       variant="outline"
       className={
         featured
-          ? "gap-3 rounded-2xl px-10 py-7 text-xl [&>svg]:size-9"
-          : "gap-2 px-5 py-4 text-base [&>svg]:size-5"
+          ? "h-auto gap-3 px-10 py-3 text-xl [&>svg]:size-9"
+          : "h-auto max-w-full whitespace-normal text-left gap-2 px-5 py-2 text-base [&>svg]:size-5"
       }
       style={{
         backgroundColor: `${color}20`,
