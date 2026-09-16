@@ -198,6 +198,11 @@ export const skills = [
 
   // Tools
   {
+    translationKey: "spreadsheets",
+    color: "#217346",
+    group: "tools",
+  },
+  {
     translationKey: "git",
     icon: FaGitAlt,
     color: "#F05032",
@@ -234,13 +239,8 @@ export const skills = [
 
   // Other
   {
-    translationKey: "spreadsheets",
-    color: "#217346",
-    group: "other",
-  },
-  {
     translationKey: "deviceMaintenance",
-    color: "#64748B",
+    color: "#909090",
     group: "other",
   },
   {
