@@ -2,7 +2,6 @@ import { getTranslations } from "next-intl/server";
 import { skills } from "@/data/skills";
 import SkillItem from "./skill-item";
 import Container from "../container";
-import { Wrench } from "lucide-react";
 
 export default async function Skills() {
   const t = await getTranslations("skills");
@@ -26,13 +25,13 @@ export default async function Skills() {
   return (
     <section
       id="skills"
-      className="mt-14 overflow-hidden w-11/12 mx-auto rounded-3xl border border-primary bg-background 
-          shadow-md/[0.04] backdrop-blur-sm px-6 md:px-4 py-18"
+      className="mt-20 overflow-hidden w-11/12 mx-auto rounded-3xl border border-border bg-primary 
+          shadow-md/[0.04] backdrop-blur-sm px-6 md:px-4 py-14 image-background profile-background"
     >
-      <Container className="max-w-375 flex flex-col gap-12 text-center">
+      <Container className="max-w-375 flex flex-col gap-3 text-center">
         {/* Header */}
-        <div className="w-full flex flex-col items-center gap-6">
-          <h2 className="text-3xl font-bold md:text-4xl text-primary flex gap-2 items-center">
+        <div className="w-full flex flex-col items-center">
+          <h2 className="text-3xl font-bold md:text-4xl text-background flex items-center">
             {t("title")}
           </h2>
         </div>
@@ -40,8 +39,8 @@ export default async function Skills() {
         {/* Main skills */}
         <section
           className="
-          flex flex-col gap-6 min-w-0 rounded-3xl border border-border bg-background p-6 
-          shadow-md/[0.04] backdrop-blur-sm
+          flex flex-col gap-6 min-w-0 rounded-3xl border border-border bg-background p-6
+          shadow-md/[0.04]
           "
         >
           <h3 className="text-2xl font-bold md:text-3xl">
@@ -62,7 +61,7 @@ export default async function Skills() {
         </section>
 
         {/* Complementary skills */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-2">
           {complementaryGroups.map(([group, groupSkills]) => (
             <section
               key={group}

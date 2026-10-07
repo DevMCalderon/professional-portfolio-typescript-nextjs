@@ -33,7 +33,7 @@ export default async function Profile() {
 
   return (
     <section id="profile" className="mt-20">
-      <Container className="flex flex-wrap bg-background border-primary border rounded-3xl max-w-[1600px] overflow-hidden">
+      <Container className="flex flex-wrap bg-background border-border border rounded-3xl max-w-[1600px] overflow-hidden">
         {/* Left side */}
         <div className="lg:w-6/12 flex flex-col gap-6 text-6xl md:text-8xl text-background font-bold bg-primary text-center justify-center px-6 py-12 md:px-12 lg:py-0 image-background profile-background overflow-hidden">
           <p>{t("tagline")}</p>
